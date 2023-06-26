@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog list</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
   Lista en el blog
   {% for post in posts %}
     <div>
       <a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a>
-      <a href="{% url 'blog:update' post.id %}">Update</a>
-      <a href="{% url 'blog:delete' post.id %}">Delete</a>
+    </div>
+    <div>
+      <a class="text-blue-500" href="{% url 'blog:update' post.id %}">Update</a>
+    </div>
+    <div>
+      <a class="text-blue-500" href="{% url 'blog:delete' post.id %}">Delete</a>
     </div>
     <p>{{ post.content }}</p>
   {% endfor %}
   <div>
-    crea un post <a href="{% url 'blog:create' %}">aqui</a>
+    crea un post <a class="text-blue-500" href="{% url 'blog:create' %}">aqui</a>
   </div>
-</body>
-</html>
+{% endblock content %}

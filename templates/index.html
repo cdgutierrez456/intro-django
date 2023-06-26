@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home django</title>
-</head>
-<body>
-  Visita mi blog <a href="{% url 'blog:home' %}">aqui</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+Visita mi blog <a class="text-blue-500" href="{% url 'blog:home' %}">Aqui</a>
+{% endblock content %}
