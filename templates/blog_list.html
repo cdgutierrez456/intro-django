@@ -7,6 +7,12 @@
 </head>
 <body>
   Lista en el blog
+  {% for post in posts %}
+    <div>
+      <a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a>
+    </div>
+    <p>{{ post.content }}</p>
+  {% endfor %}
   <div>
     crea un post <a href="{% url 'blog:create' %}">aqui</a>
   </div>
